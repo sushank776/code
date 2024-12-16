@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+
+    <!-- Declaration of Classes -->
+    <rdf:Description rdf:about="#Base"/>
+    <rdf:Description rdf:about="#Height"/>
+    <rdf:Description rdf:about="#Rectangle"/>
+    <rdf:Description rdf:about="#Shape"/>
+    <rdf:Description rdf:about="#Square"/>
+    <rdf:Description rdf:about="#Triangle"/>
+    <rdf:Description rdf:about="#numericvalue"/>
+
+    <!-- Declaration of Object Properties -->
+    <rdf:Description rdf:about="#hasBase"/>
+    <rdf:Description rdf:about="#hasHeight"/>
+
+    <!-- Declaration of Data Properties -->
+    <rdf:Description rdf:about="#baseLength"/>
+    <rdf:Description rdf:about="#heightLength"/>
+    <rdf:Description rdf:about="#sideLength"/>
+
+    <!-- SubClass relationships -->
+    <rdf:Description rdf:about="#Base">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Height">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Rectangle">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf rdf:resource="#Shape"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Square">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf rdf:resource="#Shape"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#Triangle">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+        <rdfs:subClassOf rdf:resource="#Shape"/>
+    </rdf:Description>
+
+    <!-- Object Properties Domain and Range -->
+    <rdf:Description rdf:about="#hasBase">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="#Shape"/>
+        <rdfs:range rdf:resource="#numericvalue"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#hasHeight">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+        <rdfs:domain rdf:resource="#Shape"/>
+        <rdfs:range rdf:resource="#numericvalue"/>
+    </rdf:Description>
+
+    <!-- Data Properties Domain and Range -->
+    <rdf:Description rdf:about="#baseLength">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="#Triangle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#heightLength">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="#Triangle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </rdf:Description>
+
+    <rdf:Description rdf:about="#sideLength">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+        <rdfs:domain rdf:resource="#Rectangle"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </rdf:Description>
+
+</rdf:RDF>
